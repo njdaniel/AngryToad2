@@ -1,4 +1,6 @@
 import sys
+from angrytoad.character import Character
+
 
 def main(args=None):
     """Main routine"""
@@ -11,6 +13,7 @@ def main(args=None):
     # 1. Start up game menu
 
     # 2. Select or Create character
+    new_character = Character()
 
     # 3. Choose Opponent to fight
 
