@@ -16,7 +16,6 @@ class Character(object):
         self.charisma = 0
         self.health = 40
         self.points = 20
-        # TODO: dict is not updating
         print("Creating character...")
         get_name = input("Please enter name: ")
         print("You have %d points to spend on Attributes:" % (self.points))
