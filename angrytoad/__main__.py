@@ -13,11 +13,16 @@ def main(args=None):
     # 1. Start up game menu
 
     # 2. Select or Create character
+    list_characters = []
     new_character = Character()
+    list_characters.append(new_character)
+    print(list_characters)
+    player1 = input("Choose your character for player1: ")
+    player2 = input("Choose your character for player2: ")
 
     # 3. Choose Opponent to fight
 
-    # 4. Call algorithm for the fight
+    # 4. Call algorithm for the fight/manual fight
 
     # 5. Display results of fight with option to: fight again, pick new opponent, or back to main menu
 
