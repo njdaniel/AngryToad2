@@ -3,6 +3,7 @@
 Class for character
 """
 import time
+import random
 
 
 class Character(object):
@@ -16,6 +17,7 @@ class Character(object):
         self.charisma = 0
         self.health = 40
         self.points = 20
+        self.moves = ['attack', 'dodge', 'block']
         print("Creating character...")
         get_name = input("Please enter name: ")
         print("You have %d points to spend on Attributes:" % (self.points))
@@ -57,6 +59,8 @@ class Character(object):
                 else:
                     continue
 
+
+# =================== Methods for Character ======================
 
     # Print for loops
     def print_attributes(self):
@@ -119,12 +123,24 @@ class Character(object):
 
 
 
-
+# ------ Action Methods --------
     def change_name(self):
         new_name = input("Please a new name: ")
         self.name = new_name
 
-
+    def attack(self, opponent_ac):
+        """Character action to damage another
+        :return damage
+        """
+        skill_multiplier = 1
+        str_mult = (self.strength-10) / 2
+        dex_mult = (self.dexterity-10) /2
+        hits = True
+        damage = str_mult + skill_multiplier * random.randint(1,4)
+    def dodge(self):
+        pass
+    def block(self):
+        pass
 
 if __name__ == '__main__':
     bob = Character()
