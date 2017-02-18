@@ -16,7 +16,8 @@ def main(args=None):
     list_characters = []
     new_character = Character()
     list_characters.append(new_character)
-    print(list_characters)
+    for x in list_characters:
+        print(x.name)
     player1 = input("Choose your character for player1: ")
     player2 = input("Choose your character for player2: ")
 

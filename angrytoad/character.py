@@ -36,8 +36,10 @@ class Character(object):
                             "(ex. <add,remove>, <attribute>, <amount>"
                             "OR <clear> to reset attributes "
                             "OR <confirm> to finalize character: ")
+
             numbers_inlist = [x for x in command if x.isdigit()]
-            amount = int(''.join(numbers_inlist))
+            if numbers_inlist:
+                amount = int(''.join(numbers_inlist))
             attribute_to_alter = ''
             for key in self._attributes.items():
                 if key[0].lower() in command:
