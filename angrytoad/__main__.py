@@ -1,6 +1,6 @@
 import sys
 from angrytoad.character import Character
-
+from .interact import user_create_character
 
 def main(args=None):
     """Main routine"""
@@ -14,7 +14,10 @@ def main(args=None):
 
     # 2. Select or Create character
     list_characters = []
+    
+    # Creating new Character by user
     new_character = Character()
+    user_create_character(new_character)
     list_characters.append(new_character)
     for x in list_characters:
         print(x.name)
