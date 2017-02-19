@@ -28,7 +28,8 @@ class Character(object):
         self.set_name(get_name)
         print("You have %d points to spend on Attributes:" % (self.points))
 
-        # Distributing the points
+    # -------- Distributing the points ----------
+        # TODO: Error handling user input
         while True:
             CHARACTER_POINTS_COMMANDS = ['add_points', 'remove_points', 'reset_points']
             self._attributes = {'Strength': self.strength, 'Dexterity': self.dexterity,
@@ -74,7 +75,7 @@ class Character(object):
         for command in commands:
             print(command, end='')
 
-    # Methods to alter points --------
+# ------- Methods to alter points --------
     def add_points(self, amount, attribute):
         if attribute.lower() in 'strength':
             self.strength += amount
@@ -94,24 +95,25 @@ class Character(object):
         elif attribute.lower() in 'charisma':
             self.charisma += amount
             self.points -= amount
-
+# TODO: Get remove points to work
+# TODO : Make sure that points doesn't go negative
     def remove_points(self, amount, attribute):
-        if attribute.lower() is 'strength':
+        if attribute.lower() in 'strength':
             self.strength -= amount
             self.points += amount
-        elif attribute.lower() is 'dexterity':
+        elif attribute.lower() in 'dexterity':
             self.dexterity -= amount
             self.points += amount
-        elif attribute.lower() is 'constitution':
+        elif attribute.lower() in 'constitution':
             self.constitution -= amount
             self.points += amount
-        elif attribute.lower() is 'intelligence':
+        elif attribute.lower() in 'intelligence':
             self.intelligence -= amount
             self.points += amount
-        elif attribute.lower() is 'wisdom':
+        elif attribute.lower() in 'wisdom':
             self.wisdom -= amount
             self.points += amount
-        elif attribute.lower() is 'charisma':
+        elif attribute.lower() in 'charisma':
             self.charisma -= amount
             self.points += amount
 
@@ -131,7 +133,7 @@ class Character(object):
 
 
 
-    # Character Action Methods --------
+# ------- Character Action Methods --------
     def change_name(self):
         new_name = input("Please a new name: ")
         self.name = new_name
