@@ -78,42 +78,67 @@ class Character(object):
 # ------- Methods to alter points --------
     def add_points(self, amount, attribute):
         if attribute.lower() in 'strength':
+            if amount > self.points:
+                amount = self.points
+            self.points -= amount
             self.strength += amount
-            self.points -= amount
         elif attribute.lower() in 'dexterity':
+            if amount > self.points:
+                amount = self.points
+            self.points -= amount
             self.dexterity += amount
-            self.points -= amount
         elif attribute.lower() in 'constitution':
+            if amount > self.points:
+                amount = self.points
+            self.points -= amount
             self.constitution += amount
-            self.points -= amount
         elif attribute.lower() in 'intelligence':
+            if amount > self.points:
+                amount = self.points
+            self.points -= amount
             self.intelligence += amount
-            self.points -= amount
         elif attribute.lower() in 'wisdom':
+            if amount > self.points:
+                amount = self.points
+            self.points -= amount
             self.wisdom += amount
-            self.points -= amount
         elif attribute.lower() in 'charisma':
-            self.charisma += amount
+            if amount > self.points:
+                amount = self.points
             self.points -= amount
-# TODO: Get remove points to work
+            self.charisma += amount
+
+
 # TODO : Make sure that points doesn't go negative
     def remove_points(self, amount, attribute):
         if attribute.lower() in 'strength':
+            if amount > self.strength:
+                amount = self.strength
             self.strength -= amount
             self.points += amount
         elif attribute.lower() in 'dexterity':
+            if amount > self.dexterity:
+                amount = self.dexterity
             self.dexterity -= amount
             self.points += amount
         elif attribute.lower() in 'constitution':
+            if amount > self.constitution:
+                amount = self.constitution
             self.constitution -= amount
             self.points += amount
         elif attribute.lower() in 'intelligence':
+            if amount > self.intelligence:
+                amount = self.intelligence
             self.intelligence -= amount
             self.points += amount
         elif attribute.lower() in 'wisdom':
+            if amount > self.wisdom:
+                amount = self.wisdom
             self.wisdom -= amount
             self.points += amount
         elif attribute.lower() in 'charisma':
+            if amount > self.charisma:
+                amount = self.charisma
             self.charisma -= amount
             self.points += amount
 

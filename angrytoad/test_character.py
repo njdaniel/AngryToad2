@@ -123,7 +123,20 @@ class TestCharacter(TestCase):
         self.assertEqual(test_character.points, points_left)
 
 
-# ----- Points spent
-    def test_add_points_none_left(self):
-        pass
+# ----- Points Errors -------
+    def test_add_points_not_enough_strength(self):
+        test_character = Character()
+        amount_to_add = test_character.points + 1
+        amount_should_be = test_character.points
+        test_character.add_points(amount_to_add, 'strength')
+        self.assertEqual(test_character.strength, amount_should_be)
 
+
+    def test_remove_points_too_much_strength(self):
+        test_character = Character()
+        test_character.add_points(test_character.points, 'strength')
+        amount_to_remove = test_character.strength + 1
+        amount_should_remove = test_character.strength
+        test_character.remove_points(amount_to_remove, 'strength')
+        self.assertEqual(test_character.strength, 0)
+        self.assertEqual(test_character.points, amount_should_remove)
